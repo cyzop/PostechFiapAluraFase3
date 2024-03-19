@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  postech.cadpac.producer.api:
+    image: ${DOCKER_REGISTRY-}postechcadpacproducerapi
+    build:
+      context: .
+      dockerfile: PosTech.CadPac.Producer.Api/Dockerfile

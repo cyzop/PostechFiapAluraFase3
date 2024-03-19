@@ -1,0 +1,54 @@
+{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "postechazappconfiguration": "Endpoint=https://postechappconfiguration.azconfig.io;Id=QXWz;Secret=bb0FBCA5Zt1frmmnsyda5+m4CB5gS5dprkViQVauZVQ="
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5074"
+    },
+    "https": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "postechazappconfiguration": "Endpoint=https://postechappconfiguration.azconfig.io;Id=QXWz;Secret=bb0FBCA5Zt1frmmnsyda5+m4CB5gS5dprkViQVauZVQ="
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7019;http://localhost:5074"
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "environmentVariables": {
+        "ASPNETCORE_URLS": "https://+:443;http://+:80",
+        "postechazappconfiguration": "Endpoint=https://postechappconfiguration.azconfig.io;Id=QXWz;Secret=bb0FBCA5Zt1frmmnsyda5+m4CB5gS5dprkViQVauZVQ="
+      },
+      "publishAllPorts": true,
+      "useSSL": true
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:46840",
+      "sslPort": 44356
+    }
+  }
+}

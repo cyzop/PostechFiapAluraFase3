@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "PosTech.CadPac.MicroService.Consumer": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development",
+        "postechazappconfiguration": "Endpoint=https://postechappconfiguration.azconfig.io;Id=QXWz;Secret=bb0FBCA5Zt1frmmnsyda5+m4CB5gS5dprkViQVauZVQ="
+      },
+      "dotnetRunMessages": true
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
