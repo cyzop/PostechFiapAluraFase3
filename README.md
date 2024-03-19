@@ -39,3 +39,33 @@ Esta api necessita de autenticação
   .AddAzureAppConfiguration("CONNECTIONSTRING COM AZURE APP CONFIGURATION")
 
 Para autenticação (geração do token jwt) com PosTech.CadPac.Api é necessário passar um clientId e um clientSecret
+3.1) No caso do ClientId configurar o valor na variável postechcadpac:clientId do AppConfiguration
+
+3.2) No caso do ClientSecret é uma hash gerado à partir de uma composição de valores baseado em data e uma valor base conhecido pela aplicação que deve ficar armazenada em postechcadpac:clientbasehash
+
+O hash é gerado pelo algoritmo SHA256 e pode ser facilmente gerado na url https://codebeautify.org/sha256-hash-generator
+Para gerar o hash, primeiro é preciso montar o testo que será enviado ao hash. Este texto é comporto por por três partes a serem concatenadas.
+Exemplo
+(A)(B)(3), onde:
+(A) = yyyy + MM  ....ano da data corrente + mês corrente
+(B) = valor base para o Hash = ab2665b7-d626-44bb-bb3f-2be8152041d1
+(c) = yyyy - dd ....ano da data corrente - dia do mês
+
+..resultando em (antes do Hash): 2027ab2665b7-d626-44bb-bb3f-2be8152041d12006 ..este é o valor que deverá passar pela rotina de SHA256
+
+Configurações de chaves necessárias e que ficam no Azure App Configuration/Environment:
+
+- postechcadpac:clientbasehash
+ valor base para ser usado no hash de autenticação para falar com a api producer
+
+- postechcadpac:clientId
+ cliente id para identificação de quem está consumindo a api producer
+
+- postechcadpac:Secret
+secret usada para assinatura/validação do Jwt de autenticação (Bearer) da api producer
+
+- postechcadpac:masstransit:azurebus
+conexão com o Azure Service Bus
+
+- postechcadpacapi:repositorysettings:secret
+usuário e senha para autenticação com o banco de dados Mongo que está na nuvem
